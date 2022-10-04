@@ -35,18 +35,8 @@ function w3RemoveClass(element, name) {
 	element.className = arr1.join(" ");
 }
 
-// Add active class to the current button (highlight it)
-var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-	btns[i].addEventListener("click", function(){
-		var current = document.getElementsByClassName("active");
-		current[0].className = current[0].className.replace(" active", "");
-		this.className += " active";
-	});
-}
 
-function filterNumName() {
+function filterNumName_() {
 	// Declare variables
 	var input, filter, table, tr, td, i, txtValue;
 	input = document.getElementById("filtreNom");
@@ -68,7 +58,7 @@ function filterNumName() {
 	}
 }
 
-function filterPeople() {
+function filterPeople_() {
 	// Declare variables
 	var input, filter, table, tr, td, i, txtValue;
 	input = document.getElementById("filtrePeople");
@@ -115,3 +105,26 @@ function showModal(idimg) {
 		modal.style.display = "none";
 	} 
 }
+
+
+
+function filterNumName() {
+	input = document.getElementById("filtreNom");
+	var searchStyle_N = document.getElementById('search_style_N');
+	if (!input.value) {
+		searchStyle_N.innerHTML = "";
+		return;
+	}
+	searchStyle_N.innerHTML = ".searchable:not([data-name*=\"" + input.value.toLowerCase() + "\" i]) { display: none; }";
+};
+
+
+function filterPeople() {
+	input = document.getElementById("filtrePeople");
+	var searchStyle_P = document.getElementById('search_style_P');
+	if (!input.value) {
+		searchStyle_P.innerHTML = "";
+		return;
+	}
+	searchStyle_P.innerHTML = ".searchable:not([data-people*=\"" + input.value.toLowerCase() + "\" i]) { display: none; }";
+};
