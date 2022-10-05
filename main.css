@@ -8,8 +8,27 @@
 	padding: 20px;
 	font-family: Arial;
 	font-size :calc(16px + .5vw);
+	counter-reset: nbpuz;
   }
   
+  span#cptpuz::before {
+	content: counter(nbpuz);
+  }
+
+  span#cptpuz {
+	position:fixed;
+	width:60px;
+	height:30px;
+	bottom:20px;
+	right:20px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:5px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+	padding-top:3px;
+}
+
   /* Center website */
   .main {
 	max-width: 1000px;
