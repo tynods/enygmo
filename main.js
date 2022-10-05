@@ -107,6 +107,15 @@ function showModal(idimg) {
 }
 
 
+function forceRepaint() {
+    requestAnimationFrame(()=>{
+      const e=document.createElement('DIV');
+      e.style='position:fixed;top:0;left:0;bottom:0;right:0;background:#80808001;\
+               pointer-events:none;z-index:9999999';
+      document.body.appendChild(e);
+      requestAnimationFrame(()=>e.remove());  
+    });
+}
 
 function filterNumName() {
 	input = document.getElementById("filtreNom");
@@ -116,6 +125,9 @@ function filterNumName() {
 		return;
 	}
 	searchStyle_N.innerHTML = ".searchable:not([data-name*=\"" + input.value.toLowerCase() + "\" i]) { display: none; }";
+							
+	
+	
 };
 
 
@@ -127,4 +139,8 @@ function filterPeople() {
 		return;
 	}
 	searchStyle_P.innerHTML = ".searchable:not([data-people*=\"" + input.value.toLowerCase() + "\" i]) { display: none; }";
+							
+	
+
+	
 };

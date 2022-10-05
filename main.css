@@ -43,7 +43,7 @@
 	padding: 1rem;
 	display: none;
 	max-width: 450px;
-  
+	
   }
   
   
@@ -53,6 +53,7 @@
 	display: grid;
 	gap: 1rem;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	
   }
   
   
@@ -67,10 +68,13 @@
 	font-size: 8px;
   }
   
-  
-  .fltrN.fltrP {
+  .entry {
 	display: block;
+	counter-increment: nbpuz;
   }
+  /* .fltrN.fltrP {
+	display: block;
+  } */
   
   .filtres {
 	
