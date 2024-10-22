@@ -5,3 +5,4 @@ test.css
 test.html
 test.js
 *.csv
+.DS_Store
